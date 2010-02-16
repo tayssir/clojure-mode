@@ -327,6 +327,7 @@ elements of a def* forms."
       ;; Built-ins
       (,(concat
          "(\\(?:clojure.core/\\)?"
+         "\\(def[A-Za-z0-9-_]*\\)\\|"
          (regexp-opt
           '("*" "*1" "*2" "*3" "*agent*"
         "*allow-unresolved-vars*" "*assert*" "*clojure-version*" "*command-line-args*" "*compile-files*"
@@ -357,9 +358,7 @@ elements of a def* forms."
         "complement" "concat" "cond" "condp" "conj"
         "conj!" "cons" "constantly" "construct-proxy" "contains?"
         "count" "counted?" "create-ns" "create-struct" "cycle"
-        "dec" "decimal?" "declare" "definline" "defmacro"
-        "defmethod" "defmulti" "defn" "defn-" "defonce"
-        "defstruct" "delay" "delay?" "deliver" "deref"
+        "dec" "decimal?" "declare" "delay" "delay?" "deliver" "deref"
         "derive" "descendants" "destructure" "disj" "disj!"
         "dissoc" "dissoc!" "distinct" "distinct?" "doall"
         "doc" "dorun" "doseq" "dosync" "dotimes"
